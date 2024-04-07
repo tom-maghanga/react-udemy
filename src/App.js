@@ -14,7 +14,7 @@ function App() {
       <ul>
         
        {tasks.map( (task) =>(
-        <li key={task.id}>
+        <li key={task.id} className={task.completed ? "completed" : "incomplete"}>
           <span>{task.id} - {task.name} helo- {task.completed}</span>
         <button onClick={() => handleDelete(task.id)} className='delete'> Delete</button>
         </li>
