@@ -3,30 +3,24 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [ count, setCount] = useState(0);
-
-  function handleAdd(){
-    setCount(count +1);
-  }
-
-  function handleSub() {
-    setCount(count - 1);
-  }
-
-  function handleReset() {
-    setCount(0);
+  const [tasks, setTasks]=useState([{id: 5460, name: "Learn ReactJs", completed:true},{id: 5470, name: "Design Logo", completed:false},{id:5480, name: "Go to Towncom", completed:false}]);
+  function handleDelete(id){
+    setTasks(tasks.filter(task => task.id !==id));
   }
 
   return (
     <div className="App">
-      <div className='box'>
-        <p>{count}</p>
-        <button onClick={handleAdd} className='add'>Add</button>
-        <button onClick={handleSub} className='sub'>Sub</button>
-        <button onClick={handleReset} className='reset'>Reset</button>
+        <h1>Task List</h1>
+      <ul>
+        
+       {tasks.map( (task) =>(
+        <li key={task.id}>
+          <span>{task.id} - {task.name} helo- {task.completed}</span>
+        <button onClick={() => handleDelete(task.id)} className='delete'> Delete</button>
+        </li>
+       ))}
+      </ul>
 
-
-      </div>
     </div>
   );
 }
