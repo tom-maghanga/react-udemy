@@ -1,5 +1,6 @@
 
 li{
+  
     font: 16px;
     list-style: none;
     margin: 20px 5px;
@@ -9,6 +10,7 @@ li{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 750px;
   }
   
   li.completed{
