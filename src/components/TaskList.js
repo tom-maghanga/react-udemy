@@ -10,7 +10,8 @@ export const TaskList = ({tasks, setTasks, task, setTask}) => {
     }
 
     function handleEdit(id){
-        
+        const selectedTask = tasks.find(task => task.id === id);
+        setTask(selectedTask)
     }
 
   return (

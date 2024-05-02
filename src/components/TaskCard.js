@@ -1,6 +1,6 @@
 import "./TaskCard.css"
 
-function TaskCard({task, handleDelete}) {
+function TaskCard({task, handleDelete, handleEdit}) {
   return (
     <>
     <li className={task.completed ? "completed" : "incomplete"}>
