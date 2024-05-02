@@ -3,10 +3,14 @@ import TaskCard from './TaskCard';
 import "./TaskList.css";
 import "./AddTask.css";
 
-export const TaskList = ({tasks, setTasks}) => {
+export const TaskList = ({tasks, setTasks, task, setTask}) => {
     
     function handleDelete(id){
         setTasks(tasks.filter(task => task.id !== id));
+    }
+
+    function handleEdit(id){
+        
     }
 
   return (
@@ -16,7 +20,7 @@ export const TaskList = ({tasks, setTasks}) => {
                 <h1>TaskList</h1>
             </div>
             { tasks.map((task) => (
-                <TaskCard key={task.id} task={task} handleDelete={handleDelete} />
+                <TaskCard key={task.id} task={task} handleDelete={handleDelete} handleEdit={handleEdit} />
             )) }
         </ul>
     </section>

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./AddTask.css"
 
-function AddTask({tasks, setTasks}) {
+function AddTask({tasks, setTasks, task, setTask}) {
   const [taskValue, setTaskValue] = useState("");
   const [progress, setProgress] = useState();
 

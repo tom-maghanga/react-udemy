@@ -7,11 +7,8 @@ import { useState } from 'react';
 
 function App() {
 
-  const [tasks, setTasks] = useState([
-    {id: 5271, name: "Record React Lectures", completed: true}, 
-    {id: 7825, name: "Edit React Lectures", completed: false}, 
-    {id: 8391, name: "Watch Lectures", completed: false}
-  ]);
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState({});
 
 
   return (
@@ -19,8 +16,8 @@ function App() {
     <div className="App">
           <Header/>
           <main>
-            <AddTask tasks = {tasks} setTasks = {setTasks}/>
-            <TaskList tasks = {tasks} setTasks = {setTasks}/>
+            <AddTask tasks = {tasks} setTasks = {setTasks} task = {task} setTask={setTask}/>
+            <TaskList tasks = {tasks} setTasks = {setTasks} task = {task} setTask={setTask}/>
           </main>
           <Footer/>
     </div>
